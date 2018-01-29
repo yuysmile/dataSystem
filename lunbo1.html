@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>文字无缝滚动效果代码</title>
+<style type="text/css">
+	/* CSS Document */
+*{
+    margin:0;
+    padding:0;
+    font-size:12px;
+
+}
+body{ 
+    background:none;
+}
+input,button,select,textarea{
+    outline:none;
+}
+ul,li,dl,ol{
+    list-style:none;
+}
+a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.box{ 
+    width:100%; 
+  
+}
+.bcon{ 
+    width:100%; 
+    border:1px solid transparent; 
+}
+.bcon h1{   
+    padding:0;
+    background-color: rgb(255，255，255);
+    color:white;
+}
+.bcon h1 b{ 
+    font:bold 14px/40px '宋体'; 
+    padding:0 8px; 
+    margin-top:-1px; 
+    display:inline-block;
+    color: white;
+}
+.list_lh{ 
+    height:248px; 
+    overflow:hidden;
+}
+.list_lh li{ 
+    padding:10px;
+}
+.pp{
+    height: 2px;
+    display: block;
+}
+.list_lh li.lieven{ background:rgb(6,24,75);}
+.list_lh li.liodd{ background:rgb(10,31,101);}
+.list_lh li p{ height:10px; line-height:10px;}
+.list_lh li p a{ float:left;}
+.list_lh li p em{ width:40px; font:normal 12px/24px Arial; color:#fff;position: relative;left: 30%;top:-12px;display:inline-block; background:#CD3700; height:17px; line-height:17px; text-align: center;}
+.list_lh li p span{ color:#999; float:right;right: }
+.list_lh li p a.btn_lh{ background:#28BD19; height:17px; line-height:17px; color:#fff; padding:0 ; margin-top:4px; display:inline-block; float:right; width: 80px;text-align: center;}
+.btn_lh:hover{ color:#fff; text-decoration:none;}
+
+.btm p{ font:normal 12px/24px 'Microsoft YaHei'; text-align:center;}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+// JavaScript Document
+(function($){
+    $.fn.myScroll = function(options){
+    //默认配置
+    var defaults = {
+        speed:40,  //滚动速度,值越大速度越慢
+        rowHeight:24 //每行的高度
+    };
+    
+    var opts = $.extend({}, defaults, options),intId = [];
+    
+    function marquee(obj, step){
+    
+        obj.find("ul").animate({
+            marginTop: '-=1'
+        },0,function(){
+                var s = Math.abs(parseInt($(this).css("margin-top")));
+                if(s >= step){
+                    $(this).find("li").slice(0, 1).appendTo($(this));
+                    $(this).css("margin-top", 0);
+                }
+            });
+        }
+        
+        this.each(function(i){
+            var sh = opts["rowHeight"],speed = opts["speed"],_this = $(this);
+            intId[i] = setInterval(function(){
+                if(_this.find("ul").height()<=_this.height()){
+                    clearInterval(intId[i]);
+                }else{
+                    marquee(_this, sh);
+                }
+            }, speed);
+
+            _this.hover(function(){
+                clearInterval(intId[i]);
+            },function(){
+                intId[i] = setInterval(function(){
+                    if(_this.find("ul").height()<=_this.height()){
+                        clearInterval(intId[i]);
+                    }else{
+                        marquee(_this, sh);
+                    }
+                }, speed);
+            });
+        
+        });
+
+    }
+
+})(jQuery);
+$(document).ready(function(){
+    $('.list_lh li:even').addClass('lieven');
+    $('.list_lh li:odd').addClass('liodd');
+})
+$(function(){
+    $("div.list_lh").myScroll({
+        speed:40, //数值越大，速度越慢
+        rowHeight:40 //li的高度
+    });
+});
+
+</script>
+</head>
+
+<body>
+<div class="box">
+    <div class="bcon">
+        <h1><b>图标</b><b style="margin-left: 31%;">占比</b><b style="float: right;">销售平台</b></h1>
+        <!-- 代码开始 -->
+        <div class="list_lh">
+            <ul>
+                <li>
+                    <p><img src="images/logo/taobao.png" width="50px" height="29px"><a href="#" class="btn_lh">淘宝</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/jumei.png" width="50px" height="29px"><a href="#" class="btn_lh">聚美优品</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/beibei.png" width="50px" height="29px"><a href="#" class="btn_lh">贝贝</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/lefeng.png" width="50px" height="29px"><a href="#" class="btn_lh">乐蜂网</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/tianmao.png" width="50px" height="29px"><a href="#" class="btn_lh">天猫</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/dangdang.png" width="50px" height="29px"><a href="#" class="btn_lh">当当网</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/miya.png" width="50px" height="29px"><a href="#" class="btn_lh">蜜芽</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/matou.png" width="50px" height="29px"><a href="#" class="btn_lh">洋码头</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/jingdong.png" width="50px" height="29px"><a href="#" class="btn_lh">京东</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/guomei.png" width="50px" height="29px"><a href="#" class="btn_lh">国美在线</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/baobei.png" width="50px" height="29px"><a href="#" class="btn_lh">宝贝网</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/amazon.png" width="50px" height="29px"><a href="#" class="btn_lh">亚马逊</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/weipinhui.png" width="50px" height="29px"><a href="#" class="btn_lh">唯品会</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/mogu.png" width="50px" height="29px"><a href="#" class="btn_lh">蘑菇街</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/leyou.png" width="50px" height="29px"><a href="#" class="btn_lh">乐友孕婴童</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/womai.png" width="50px" height="29px"><a href="#" class="btn_lh">我买网</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/wangyi2.png" width="50px" height="29px"><a href="#" class="btn_lh">网易</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/yingtong.png" width="50px" height="29px"><a href="#" class="btn_lh">中国婴童网</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/yihaodian.png" width="50px" height="29px"><a href="#" class="btn_lh">一号店</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/xindan.png" width="50px" height="29px"><a href="#" class="btn_lh">新蛋</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/suning.png" width="50px" height="29px"><a href="#" class="btn_lh">苏宁易购</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+                <li>
+                    <p><img src="images/logo/wangyi.png" width="50px" height="29px"><a href="#" class="btn_lh">网易考拉海购</a><em>10%</em></p>
+                    <p class="pp"></p>
+                </li>
+            </ul>
+        </div>
+        <!-- 代码结束 -->
+    </div>
+    
+
+    
+</div>
+
+</body>
+</html>
+</body>
+</html>

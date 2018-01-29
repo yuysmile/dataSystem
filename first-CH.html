@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>欧特欧大屏数据展示</title>
+	<link rel="shortcut icon" type="text/css" href="images/logo.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<meta http-equiv="refresh" CONTENT="3";>
+	<!-- <meta http-equiv="refresh" content="5;url=second-CH.html">	 -->
+
+
+
+</head>
+<body>
+	<div id="loading" class="loading">
+		<div class="loading">
+	        <img src="https://static.jianshukeji.com/hcode/images/loader.gif" alt="加载中">
+	        <p>系统初始化中，请稍后...</p>
+	    </div>
+	</div>
+	<div class="box">
+		<div class="top">
+			<!-- 标题的位置 -->
+			<div class="select-language"><div class="language-title">语言选择:</div>
+				<select>
+					<option value="Chinese">中文🇨🇳</option>
+					<option value="English">英文🇬🇧</option>
+				</select>
+			</div>
+			<div class="title-logo">
+				<img src="images/Title.png" class="box-center-title" id="box-center-title">
+				<div class="out">欧特欧实时数据监测平台</div>
+			</div>
+			<div class="date-show">
+				<div id="now-date"></div>
+			</div>
+
+		</div>
+			<div class="line"></div>
+
+
+
+
+			<!-- 下面所有图标echarts位置 -->
+		<div class="bottom">
+			<div class="left">
+				<div class="left-top">
+				<span class="p-title1">网络零售额／消费额分布</span>
+					<div  id="main1"></div>
+					<div  id="main2"></div>
+				</div>
+				<div class="left-bottom">
+					<span class="p-title2">网络购物消费额统计</span>
+					<div id="main4">
+						<iframe src="lunbo1.html" class="iframel" frameborder="0" width="95%" height="93%" scrolling="no" ></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right-top">
+					<span class="p-title3">全国网络零售额</span>
+					<span class="Dynamic-digital">
+						<ul class="cash-number">
+							<li>1</li>
+							<li>2</li>
+							<li>0</li>
+							<li>6</li>
+							<li>7</li>
+							<li>9</li>
+							<li>0</li>
+							<li>0</li>
+							<li>0</li>
+						</ul>
+					</span>
+					<div id="main"></div>
+				</div>
+				<div class="right-bottom">
+					<div class="right-bottom1">
+					<span class="p-title4">淘宝销量百强城市</span>
+						<div id="main6"></div>
+					</div>
+					<div class="right-bottom2">
+					<p class="p-title5">最受欢迎的商品来源国</p>
+						<div id="main5"></div>
+					</div>
+					<div class="right-bottom4">
+						<span class="p-title5">最受欢迎的国外产品</span>
+						<!-- <div id="main6"></div> -->
+						<div id="tagscloud">
+							<a href="#" class="tagc1">母婴</a>
+							<a href="#" class="tagc2">化妆品</a>
+							<a href="#" class="tagc5">男装</a>
+							<a href="#" class="tagc1">电脑</a>
+							<a href="#" class="tagc2">电器</a>
+							<a href="#" class="tagc5">箱包</a>
+							<a href="#" class="tagc1">服装</a>
+							<a href="#" class="tagc2">手机</a>
+							<a href="#" class="tagc5">女装</a>
+							<a href="#" class="tagc1">奢侈品</a>
+							<a href="#" class="tagc2">保温杯</a>
+							<a href="#" class="tagc5">运动鞋</a>
+							<a href="#" class="tagc1">球类</a>
+							<a href="#" class="tagc2">雨伞</a>
+							<a href="#" class="tagc5">鼠标</a>
+							<a href="#" class="tagc1">手机壳</a>
+							<a href="#" class="tagc2">文具</a>
+							<a href="#" class="tagc5">家具</a>
+							<a href="#" class="tagc1">键盘</a>
+							<a href="#" class="tagc2">食品</a>
+							<a href="#" class="tagc5">牛奶</a>
+							<a href="#" class="tagc2">酒水</a>
+						</div>
+					</div>
+					<div class="right-bottom3">
+						<img src="images/Qr-code.png" class="Qr-code" style="margin-left: 25%;margin-top: 20%;">
+						<img src="images/logo.png" class="logo" style="margin-left: 9%;margin-top: 5%;float: left;">
+						<img src="images/logo-title.png" class="logo-title" style="margin-left: 3%;margin-top: 5%; float: left;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

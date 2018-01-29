@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>欧特欧大屏数据展示</title>
+	<link rel="shortcut icon" type="text/css" href="images/logo.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/main2.js"></script>	
+<!-- 	<meta http-equiv="refresh" content="5;url=first-CH.html"> -->
+</head>
+
+
+
+
+<body>
+<div id="loading" class="loading">
+		<div class="loading">
+	        <img src="https://static.jianshukeji.com/hcode/images/loader.gif" alt="加载中">
+	        <p>系统初始化中，请稍后...</p>
+	    </div>
+	</div>
+	<div class="box">
+		<div class="top">
+			<!-- 标题的位置 -->
+			<div class="select-language"><div class="language-title">语言选择:</div>
+				<select>
+					<option value="Chinese">中文🇨🇳</option>
+					<option value="English">英文🇬🇧</option>
+				</select>
+			</div>
+			<div class="title-logo">
+				<img src="images/Title.png" class="box-center-title" id="box-center-title">
+				<div class="out">欧特欧实时数据监测平台</div>
+			</div>
+			<div class="date-show">
+				<div id="now-date"></div>
+			</div>
+		</div>
+			<!-- 下面所有图标echarts位置 -->
+		<div class="bottom">
+			<div class="left">
+				<div class="left-top">
+					<p class="ptitle1">网络零售店铺分布</p>
+					<div id="main1"></div>
+				</div>
+				<div class="left-bottom">
+					<div class="leftt">
+						<p class="ptitle2">网络零售渠道分布</p>
+						<iframe src="lunbo2.html" class="iframel" frameborder="0" width="95%" height="78%" scrolling="no"></iframe>
+					</div>
+					<div class="rightt">
+						<img src="images/logo.png" class="logo" style="margin-left: 9%;margin-top: 30%;float: left;">
+						<img src="images/logo-title.png" class="logo-title" style="margin-left: 3%;margin-top: 30%; float: left;">
+						<img src="images/Qr-code.png" class="Qr-code" style="margin-left: 20%;margin-top: 5%;">
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right-top">
+					<div class="right-top1">
+						<p class="ptitle3">网络零售行业分析</p>
+						<div id="main3"></div>
+					</div>
+					<div class="right-top2">
+						<p class="ptitle4">消费行为分析(防晒类)</p>
+						<div class="right-top-top">
+							<div id="main4"></div>
+						</div>
+						<div class="right-top-bottom">
+							<div id="main5"></div>
+						</div>
+					</div>
+				</div>
+				<div class="right-bottom">
+					<div class="right-bottom1">
+						<div id="main6"></div>
+					</div>
+					<div class="right-bottom2">
+						<div id="main7"></div>
+					</div>
+					<div class="right-bottom3">
+						<div id="main8"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
